@@ -1,3 +1,10 @@
+//Had to add this in and adjust the spaceId and accessToken variable to make it work
+
+let env = process.env.NODE_ENV || 'development';
+
+// This adds dotenv (for storing environment variables) to gatsby
+require('dotenv').config({path: `./.env.${env}`});
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby + Netlify CMS Starter',
@@ -5,6 +12,18 @@ module.exports = {
       'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-hubspot',
+      options: {
+        key: process.env.HUBSPOT_API_KEY,
+        filters: {
+          limit: 10,
+          state: 'PUBLISHED',
+          offset: 2,
+          content_group_id:1870210618
+        }
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
