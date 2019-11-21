@@ -5,7 +5,7 @@ date: 2019-11-13T13:43:35.241Z
 description: >-
   Why you should participate the 2019 VAESE (Voluntary Alumni Engagement in
   Support of Education) survey.
-featuredpost: true
+featuredpost: false
 featuredimage: /img/m11387_vaese-logo.png
 tags:
   - '"Alumni" "Relations & Engagement" "Alumni"'
